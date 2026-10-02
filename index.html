@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula - Fundamentos de Python</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="counter"></div>
+<div id="teacher-info"><strong>Disciplina:</strong> Lógica de Programação<br><strong>Prof.:</strong> Esp. Welliton Cunha</div>
+<div id="controls">
+  <button id="prevBtn" type="button">Anterior</button>
+  <button id="nextBtn" type="button">Próximo</button>
+</div>
+
+<section class="slide active">
+  <div>
+    <span class="tag">PYTHON</span>
+    <h1>Fundamentos da Linguagem</h1>
+    <p class="muted">Estrutura básica de um programa, tipos de dados, variáveis, operadores, tabela verdade e entrada/saída.</p>
+  </div>
+  <div class="footer"><span>Aula — Fundamentos de Python</span><span>1</span></div>
+</section>
+
+<section class="slide">
+  <h2>Objetivos da aula</h2>
+  <div class="grid">
+    <div class="card">✓ Entender a estrutura básica de um programa Python</div>
+    <div class="card">✓ Trabalhar com variáveis e tipos de dados</div>
+    <div class="card">✓ Utilizar operadores e expressões</div>
+    <div class="card">✓ Compreender a lógica booleana</div>
+    <div class="card">✓ Ler dados com <code>input()</code></div>
+    <div class="card">✓ Exibir resultados com <code>print()</code></div>
+  </div>
+  <div class="footer"><span>Objetivos</span><span>2</span></div>
+</section>
+
+<section class="slide">
+  <h2>2.1 — A linguagem Python</h2>
+  <ul>
+    <li>Python é uma linguagem de programação de alto nível.</li>
+    <li>Possui sintaxe simples e foco em produtividade.</li>
+    <li>É interpretada e possui tipagem dinâmica.</li>
+    <li>É utilizada em Web, dados, IA, automação, scripts e muito mais.</li>
+  </ul>
+  <div class="card"><strong>Ideia principal:</strong> o código deve ser legível para facilitar o desenvolvimento e a manutenção.</div>
+  <div class="footer"><span>A linguagem Python</span><span>3</span></div>
+</section>
+
+<section class="slide">
+  <h2>Primeiro programa</h2>
+  <pre><code>print("Olá, mundo!")</code></pre>
+  <h3>O que acontece?</h3>
+  <ul>
+    <li><code>print()</code> é uma função usada para exibir informações.</li>
+    <li>A string está entre aspas.</li>
+    <li>Não precisamos declarar o tipo da variável antes de usar.</li>
+  </ul>
+  <div class="footer"><span>Prática</span><span>4</span></div>
+</section>
+
+<section class="slide">
+  <h2>Estrutura básica</h2>
+  <pre><code># Comentário
+nome = "Maria"
+idade = 20
+
+print("Nome:", nome)
+print("Idade:", idade)</code></pre>
+  <div class="grid">
+    <div class="card"><strong>Comentário</strong><br><code>#</code> documenta o código e não é executado.</div>
+    <div class="card"><strong>Indentação</strong><br>Espaços no início da linha definem blocos de código.</div>
+  </div>
+  <div class="footer"><span>Sintaxe</span><span>5</span></div>
+</section>
+
+<section class="slide">
+  <h2>2.2 — Tipos de dados</h2>
+  <table>
+    <tr><th>Tipo</th><th>Exemplo</th><th>Descrição</th></tr>
+    <tr><td><code>int</code></td><td>10</td><td>Inteiro</td></tr>
+    <tr><td><code>float</code></td><td>10.5</td><td>Número decimal</td></tr>
+    <tr><td><code>str</code></td><td>"Python"</td><td>Texto</td></tr>
+    <tr><td><code>bool</code></td><td>True / False</td><td>Booleano</td></tr>
+  </table>
+  <pre><code>idade = 20
+altura = 1.75
+nome = "Ana"
+aprovado = True</code></pre>
+  <div class="footer"><span>Tipos de dados</span><span>6</span></div>
+</section>
+
+<section class="slide">
+  <h2>Variáveis e <span class="accent">type()</span></h2>
+  <pre><code>nome = "João"
+idade = 21
+nota = 8.5
+aprovado = True
+
+print(type(nome))
+print(type(idade))
+print(type(nota))
+print(type(aprovado))</code></pre>
+  <p><strong>Python identifica o tipo automaticamente.</strong></p>
+  <div class="footer"><span>Variáveis</span><span>7</span></div>
+</section>
+
+<section class="slide">
+  <h2>Constantes em Python</h2>
+  <p>Python não possui uma palavra-chave específica para declarar constantes.</p>
+  <p>Por convenção, usamos <strong>MAIÚSCULAS</strong> para indicar que um valor não deveria ser alterado.</p>
+  <pre><code>PI = 3.14159
+TAXA_JUROS = 0.10
+NOME_SISTEMA = "Acadêmico"</code></pre>
+  <div class="card">⚠️ A convenção não impede tecnicamente a alteração do valor.</div>
+  <div class="footer"><span>Constantes</span><span>8</span></div>
+</section>
+
+<section class="slide">
+  <h2>Conversão de tipos</h2>
+  <pre><code>idade = "20"
+
+idade = int(idade)
+altura = float("1.75")
+texto = str(100)
+valor = bool(1)
+
+print(idade)
+print(altura)
+print(texto)
+print(valor)</code></pre>
+  <p class="muted">Conversões comuns: <code>int()</code>, <code>float()</code>, <code>str()</code> e <code>bool()</code>.</p>
+  <div class="footer"><span>Type casting</span><span>9</span></div>
+</section>
+
+<section class="slide">
+  <h2>2.3 — Atribuição</h2>
+  <pre><code>idade = 20
+nome = "Carlos"
+saldo = 1500.50</code></pre>
+  <p>O operador <code>=</code> atribui um valor a uma variável.</p>
+  <div class="card">
+    <strong>Atenção:</strong> <code>=</code> significa atribuição.<br>
+    <code>==</code> significa comparação de igualdade.
+  </div>
+  <pre><code>idade = 20
+print(idade == 20)  # True</code></pre>
+  <div class="footer"><span>Atribuição</span><span>10</span></div>
+</section>
+
+<section class="slide">
+  <h2>Operadores aritméticos</h2>
+  <table>
+    <tr><th>Operador</th><th>Exemplo</th><th>Resultado</th></tr>
+    <tr><td>+</td><td>10 + 3</td><td>13</td></tr>
+    <tr><td>-</td><td>10 - 3</td><td>7</td></tr>
+    <tr><td>*</td><td>10 * 3</td><td>30</td></tr>
+    <tr><td>/</td><td>10 / 3</td><td>3.333...</td></tr>
+    <tr><td>//</td><td>10 // 3</td><td>3</td></tr>
+    <tr><td>%</td><td>10 % 3</td><td>1</td></tr>
+    <tr><td>**</td><td>2 ** 3</td><td>8</td></tr>
+  </table>
+  <div class="footer"><span>Operadores</span><span>11</span></div>
+</section>
+
+<section class="slide">
+  <h2>Operadores relacionais</h2>
+  <pre><code>idade = 20
+
+print(idade > 18)
+print(idade < 18)
+print(idade == 20)
+print(idade != 20)
+print(idade >= 20)
+print(idade <= 20)</code></pre>
+  <p>O resultado de uma comparação é um valor booleano: <code>True</code> ou <code>False</code>.</p>
+  <div class="footer"><span>Comparações</span><span>12</span></div>
+</section>
+
+<section class="slide">
+  <h2>Operadores lógicos</h2>
+  <div class="grid">
+    <div class="card"><h3>AND</h3><code>True and True → True</code><br>As duas condições precisam ser verdadeiras.</div>
+    <div class="card"><h3>OR</h3><code>True or False → True</code><br>Pelo menos uma condição precisa ser verdadeira.</div>
+    <div class="card"><h3>NOT</h3><code>not True → False</code><br>Inverte o valor lógico.</div>
+  </div>
+  <pre><code>idade = 20
+tem_documento = True
+
+print(idade >= 18 and tem_documento)</code></pre>
+  <div class="footer"><span>Lógica booleana</span><span>13</span></div>
+</section>
+
+<section class="slide">
+  <h2>Tabela verdade — AND</h2>
+  <table>
+    <tr><th>A</th><th>B</th><th>A and B</th></tr>
+    <tr><td>False</td><td>False</td><td>False</td></tr>
+    <tr><td>False</td><td>True</td><td>False</td></tr>
+    <tr><td>True</td><td>False</td><td>False</td></tr>
+    <tr><td>True</td><td>True</td><td>True</td></tr>
+  </table>
+  <p><strong>Regra:</strong> AND só é verdadeiro quando todas as condições são verdadeiras.</p>
+  <div class="footer"><span>Tabela verdade</span><span>14</span></div>
+</section>
+
+<section class="slide">
+  <h2>Tabela verdade — OR e NOT</h2>
+  <div class="grid">
+    <div>
+      <h3>OR</h3>
+      <table>
+        <tr><th>A</th><th>B</th><th>A or B</th></tr>
+        <tr><td>F</td><td>F</td><td>F</td></tr>
+        <tr><td>F</td><td>V</td><td>V</td></tr>
+        <tr><td>V</td><td>F</td><td>V</td></tr>
+        <tr><td>V</td><td>V</td><td>V</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>NOT</h3>
+      <table>
+        <tr><th>A</th><th>not A</th></tr>
+        <tr><td>F</td><td>V</td></tr>
+        <tr><td>V</td><td>F</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="footer"><span>Tabela verdade</span><span>15</span></div>
+</section>
+
+<section class="slide">
+  <h2>Expressões e precedência</h2>
+  <pre><code>resultado = 10 + 5 * 2
+print(resultado)  # 20
+
+resultado = (10 + 5) * 2
+print(resultado)  # 30</code></pre>
+  <p>Uma forma simplificada de lembrar:</p>
+  <div class="card"><strong>1.</strong> Parênteses → <strong>2.</strong> Potência → <strong>3.</strong> Multiplicação/Divisão → <strong>4.</strong> Soma/Subtração</div>
+  <div class="footer"><span>Expressões</span><span>16</span></div>
+</section>
+
+<section class="slide">
+  <h2>2.4 — Entrada de dados</h2>
+  <pre><code>nome = input("Digite seu nome: ")
+idade = input("Digite sua idade: ")
+
+print("Olá,", nome)
+print("Você tem", idade, "anos.")</code></pre>
+  <div class="card">⚠️ <code>input()</code> sempre retorna um texto (<code>str</code>).</div>
+  <div class="footer"><span>Entrada</span><span>17</span></div>
+</section>
+
+<section class="slide">
+  <h2>Entrada + conversão</h2>
+  <pre><code>idade = int(input("Digite sua idade: "))
+altura = float(input("Digite sua altura: "))
+
+print("Idade:", idade)
+print("Altura:", altura)</code></pre>
+  <p>Quando precisamos realizar cálculos, normalmente devemos converter a entrada para um tipo numérico.</p>
+  <div class="footer"><span>Prática</span><span>18</span></div>
+</section>
+
+<section class="slide">
+  <h2>Saída de dados com print()</h2>
+  <pre><code>nome = "Ana"
+idade = 22
+
+print("Nome:", nome)
+print("Idade:", idade)
+
+print(f"Meu nome é {nome} e tenho {idade} anos.")</code></pre>
+  <p><strong>F-string</strong> facilita a construção de textos com variáveis.</p>
+  <div class="footer"><span>Saída</span><span>19</span></div>
+</section>
+
+<section class="slide">
+  <h2>Prática guiada — Média do aluno</h2>
+  <pre><code>nome = input("Nome do aluno: ")
+nota1 = float(input("Nota 1: "))
+nota2 = float(input("Nota 2: "))
+
+media = (nota1 + nota2) / 2
+
+print(f"Aluno: {nome}")
+print(f"Média: {media:.2f}")</code></pre>
+  <div class="card">Pergunta para a turma: como poderíamos mostrar também se a média é maior ou igual a 7?</div>
+  <div class="footer"><span>Prática</span><span>20</span></div>
+</section>
+
+<section class="slide">
+  <h2>Prática — Situação do aluno</h2>
+  <pre><code>if media >= 7:
+    print("Aprovado")
+else:
+    print("Reprovado")</code></pre>
+  <p>Observe a importância da <strong>indentação</strong>: ela define o bloco pertencente ao <code>if</code>.</p>
+  <div class="footer"><span>Prática</span><span>21</span></div>
+</section>
+
+<section class="slide">
+  <h2>Exercício 1 — Conversor de temperatura</h2>
+  <div class="exercise">
+    <p>Crie um programa que:</p>
+    <ol>
+      <li>Leia uma temperatura em Celsius.</li>
+      <li>Converta para Fahrenheit.</li>
+      <li>Exiba o resultado com duas casas decimais.</li>
+    </ol>
+    <p><strong>Fórmula:</strong> F = C × 9/5 + 32</p>
+  </div>
+  <div class="footer"><span>Exercícios</span><span>22</span></div>
+</section>
+
+<section class="slide">
+  <h2>Exercício 2 — Compra</h2>
+  <div class="exercise">
+    <p>Leia:</p>
+    <ul>
+      <li>nome do produto;</li>
+      <li>preço unitário;</li>
+      <li>quantidade.</li>
+    </ul>
+    <p>Calcule e mostre o valor total da compra.</p>
+  </div>
+  <div class="footer"><span>Exercícios</span><span>23</span></div>
+</section>
+
+<section class="slide">
+  <h2>Exercício 3 — Maioridade</h2>
+  <div class="exercise">
+    <p>Leia a idade de uma pessoa e informe se ela é:</p>
+    <ul>
+      <li>menor de idade; ou</li>
+      <li>maior ou igual a 18 anos.</li>
+    </ul>
+    <p>Use um operador relacional para realizar a verificação.</p>
+  </div>
+  <div class="footer"><span>Exercícios</span><span>24</span></div>
+</section>
+
+<section class="slide">
+  <h2>Exercício 4 — Login lógico</h2>
+  <div class="exercise">
+    <p>Considere:</p>
+    <pre><code>usuario_correto = True
+senha_correta = False</code></pre>
+    <p>Crie uma expressão usando <code>and</code> para verificar se o usuário pode entrar no sistema.</p>
+  </div>
+  <div class="footer"><span>Exercícios</span><span>25</span></div>
+</section>
+
+<section class="slide">
+  <h2>Desafio final — Cadastro acadêmico</h2>
+  <p>Desenvolva um programa que leia:</p>
+  <ul>
+    <li>Nome do aluno</li>
+    <li>Idade</li>
+    <li>Nota 1 e Nota 2</li>
+  </ul>
+  <p>Depois:</p>
+  <ul>
+    <li>calcule a média;</li>
+    <li>mostre os dados formatados;</li>
+    <li>informe se o aluno foi aprovado (média ≥ 7).</li>
+  </ul>
+  <div class="footer"><span>Desafio</span><span>26</span></div>
+</section>
+
+<section class="slide">
+  <h2>Gabarito — exercícios</h2>
+  <pre><code># 1
+c = float(input("Celsius: "))
+f = c * 9 / 5 + 32
+print(f"{f:.2f} °F")
+
+# 2
+produto = input("Produto: ")
+preco = float(input("Preço: "))
+qtd = int(input("Quantidade: "))
+total = preco * qtd
+print(f"{produto}: R$ {total:.2f}")</code></pre>
+  <div class="footer"><span>Gabarito</span><span>27</span></div>
+</section>
+
+<section class="slide">
+  <h2>Gabarito — lógica</h2>
+  <pre><code># 3
+idade = int(input("Idade: "))
+if idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
+
+# 4
+usuario_correto = True
+senha_correta = False
+acesso = usuario_correto and senha_correta
+print(acesso)</code></pre>
+  <div class="footer"><span>Gabarito</span><span>28</span></div>
+</section>
+
+<section class="slide">
+  <h2>Resumo da aula</h2>
+  <div class="grid">
+    <div class="card"><strong>Python</strong><br>Sintaxe simples e legível.</div>
+    <div class="card"><strong>Variáveis</strong><br>Guardam valores e possuem tipos.</div>
+    <div class="card"><strong>Operadores</strong><br>Permitem calcular e comparar.</div>
+    <div class="card"><strong>Booleanos</strong><br>Base para decisões lógicas.</div>
+    <div class="card"><strong>input()</strong><br>Recebe dados do usuário.</div>
+    <div class="card"><strong>print()</strong><br>Exibe informações.</div>
+  </div>
+  <div class="footer"><span>Conclusão</span><span>29</span></div>
+</section>
+
+<section class="slide">
+  <div style="text-align:center">
+    <h1>Próximo passo 🚀</h1>
+    <p>Usar variáveis, operadores e entrada de dados para construir programas que <strong>tomam decisões</strong>.</p>
+    <p class="accent">Python → dados → lógica → programa</p>
+  </div>
+  <div class="footer"><span>Fim da aula</span><span>30</span></div>
+</section>
+
+<div id="help">Navegue pelos slides usando os botões</div>
+
+<script src="script.js"></script>
+</body>
+</html>
